@@ -46,7 +46,7 @@ function skills (){
 function mode() {
     const body = document.querySelector('body');
     const btn = document.querySelector('.icon__mode');
-    const icon = document.querySelector('.icon__mode icon-icon');
+    const icon = document.querySelector('.icon__mode ion-icon');
     console.log(icon);
     btn.addEventListener('click', () => {
         body.classList.toggle('dark');
@@ -60,7 +60,7 @@ function mode() {
 
 function sound(){
     const btn = document.querySelector('.icon__volume');
-    const icon = documen.querySelector('.icon__volume');
+    const icon = documen.querySelector('.icon__volume ion-icon');
     const audio = document.querySelector('.icon__volume audio');
     btn.addEventListener('click', () => {
         if (icon.name==='volume-mute-sharp') {
