@@ -130,6 +130,27 @@ a{
 .btn__next{
     right: 1%;
 }
+/* estilos para el slider splide */
+
+.splide{
+    padding: 50px;
+}
+.splide__slide{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
+}
+.splide__slide div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.splide__slide div p{
+    width: 80%;
+}
+
+
+/* fin de los stilos para el slider splide */
 
 .education{
     justify-content: space-evenly;
@@ -269,6 +290,7 @@ a{
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(1, 1fr 4fr);
         align-items: center;
+        margin-bottom: 50px;
     }
     .skills h2{
         grid-column: span 2;
@@ -294,7 +316,7 @@ a{
     .projects{
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 5fr;
-        }
+    }
     .education{
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(1, 1fr 5fr);
