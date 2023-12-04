@@ -1,8 +1,7 @@
 function skills (){
     const skill = document.querySelector('.slider__skills');
     const list = document.querySelectorAll('.slider__skills img');
-    const images = Array.from(list).map(element => element.getAttribute('src'))
-    console.log(images);
+    const images = Array.from(list).map(element => element.getAttribute('src'));
     let count = 0;
     let html = `
     <img src="${images[count]}" alt="hard skill">
@@ -17,6 +16,10 @@ function skills (){
         } else{
             count = images.length-1
         }
+        html = `
+        <img src="${images[count]}" alt="hard skill">`;
+        skill.innerHTML = html;
+        
     });
     next.addEventListener('click', () => {
         clearInterval(interval)
@@ -47,7 +50,9 @@ function mode() {
     const body = document.querySelector('body');
     const btn = document.querySelector('.icon__mode');
     const icon = document.querySelector('.icon__mode ion-icon');
-    console.log(icon);
+    const iframe = document.querySelector('header iframe')
+    const link = iframe.contentDocument.querySelector('link');
+    
     btn.addEventListener('click', () => {
         body.classList.toggle('dark');
         if (icon.name==='sunny-sharp') {
@@ -55,14 +60,33 @@ function mode() {
         } else{
             icon.name = 'sunny-sharp'
         }
+        if (link.getAttribute('href')==='dark.css') {
+           link.href = 'bright.css' 
+        } else{
+            link.href = 'dark.css' 
+        }
     })
 }
 
+async function getApi() {
+    const URL = 'https://fundametos-api-porfolios-dev-exsn.2.ie-1.fl0.io/api/v1/projects'
+    try {
+        const data = await fetch(URL)
+        const res = await data.json() 
+        return res
+    } catch (error) {
+      console.log(error);
+    }
+    
+ 
+}
 function sound(){
     const btn = document.querySelector('.icon__volume');
-    const icon = documen.querySelector('.icon__volume ion-icon');
+    const icon = document.querySelector('.icon__volume ion-icon');
     const audio = document.querySelector('.icon__volume audio');
+
     btn.addEventListener('click', () => {
+     
         if (icon.name==='volume-mute-sharp') {
             icon.name = 'volume-high-sharp';
 
@@ -78,9 +102,18 @@ function sound(){
         }
     })
 }
-function main(){
+
+function slider(){ 
+        const splide = new Splide( '.splide' );
+        splide.mount();
+    
+}
+async function main(){
+    const projects = await getApi();
+    console.log(projects);
     skills();
     mode();
     sound();
+    slider();
 }
 main();
