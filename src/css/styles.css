@@ -138,16 +138,28 @@ a{
 .splide__slide{
     display: flex;
     flex-direction: column-reverse;
+    align-items: center;
     gap: 10px;
 }
 .splide__slide div{
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-evenly;
+    height: 100%;
 }
-.splide__slide div p{
+.splide__slide div > *{
     width: 80%;
+    text-align: center;
+   
 }
+.splide__slide figure{
+    border-radius: 20px;
+    overflow: hidden;
+  
+}
+
+
 
 
 /* fin de los stilos para el slider splide */
@@ -348,6 +360,9 @@ a{
     .achivements h2{
         grid-column: span 2;
         align-self: self-end;
+    }
+    .splide__slide{
+       flex-direction: row;
     }
     
 

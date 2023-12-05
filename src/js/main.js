@@ -123,7 +123,16 @@ function printProjects(projects) {
 
 function slider(){ 
         const splide = new Splide( '.splide', {
-            type: 'loop' 
+            type: 'loop',
+            autoplay: true,
+            seed: 2000,
+                breakpoints: {
+                      849: {
+                        direction: 'ttb',
+                        height: '65vh',
+                      },
+                }
+              
         });
         splide.mount();
     
