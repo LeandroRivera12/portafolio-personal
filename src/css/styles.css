@@ -169,8 +169,12 @@ u{
 .inicio .contenido-banner h2{
     font-size: 15px;
     font-weight: normal;
+    font-family: 'Righteous';
     display: flex;
     justify-content: center;
+}
+.inicio .contenido-banner h1{
+    font-family: 'Righteous';
 }
 .inicio .contenido-banner .redes a{
     color: #fff;
